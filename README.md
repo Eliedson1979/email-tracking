@@ -75,7 +75,7 @@ npm run dev
 ## 5️⃣ Testando a API:
 a) POST /api/events
 
-URL: http://localhost:3000/api/events
+URL: http://localhost:3001/api/events
 
 Método: POST
 
@@ -127,7 +127,7 @@ Resposta esperada:
 
 b) GET /api/stats/daily
 
-URL: http://localhost:3000/api/stats/daily
+URL: http://localhost:3001/api/stats/daily
 
 Método: GET
 
@@ -159,7 +159,7 @@ Resposta exemplo:
 
 c) GET /api/health
 
-URL: http://localhost:3000/api/health
+URL: http://localhost:3001/api/health
 
 Método: GET
 
@@ -171,7 +171,7 @@ Resposta esperada:
 
 d) GET /api/metrics
 
-URL: http://localhost:3000/api/metrics
+URL: http://localhost:3001/api/metrics
 
 Método: GET
 
