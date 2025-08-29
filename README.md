@@ -66,9 +66,13 @@ npm run seed
 
 ## 4️⃣ Rodar o serviço:
 
+```sh
+npm run dev
+```
+
  
 
-5️⃣ Testando a API
+## 5️⃣ Testando a API:
 a) POST /api/events
 
 URL: http://localhost:3000/api/events
@@ -91,3 +95,68 @@ x-api-key: devkey123
   ]
 }
 ```
+
+```sh
+Resposta esperada:
+
+{ "inserted": 3 }
+
+```
+
+b) GET /api/stats/daily
+
+URL: http://localhost:3000/api/stats/daily
+
+Método: GET
+
+Header:
+
+```sh
+x-api-key: devkey123
+```
+
+```sh
+Resposta exemplo:
+
+{
+  "2025-08-29": {
+    "siteA": { "sent": 1, "open": 1 },
+    "siteB": { "click": 1 }
+  }
+}
+```
+
+c) GET /api/health
+
+URL: http://localhost:3000/api/health
+
+Método: GET
+
+```sh
+Resposta esperada:
+
+{ "ok": true, "db": true }
+```
+
+d) GET /api/metrics
+
+URL: http://localhost:3000/api/metrics
+
+Método: GET
+
+Header:
+
+```sh
+x-api-key: devkey123
+
+Resposta esperada:
+
+{ "total_events": 5, "events_today": 5 }
+```
+
+## 6️⃣ Testes:
+
+```sh
+npm test
+```
+
