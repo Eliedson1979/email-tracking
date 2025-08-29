@@ -4,7 +4,7 @@ describe("requireApiKey", () => {
   const loadModule = () => {
     jest.resetModules(); // força reload do módulo
     process.env.API_KEYS = "valid1,valid2";
-    ({ requireApiKey } = require("../../lib/auth"));
+    ({ requireApiKey } = require("../lib/auth"));
   };
 
   beforeEach(() => {
