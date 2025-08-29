@@ -4,10 +4,24 @@ async function seed() {
   const client = await pool.connect();
   try {
     const events = [
-      { site: 'siteA', type: 'sent', user_id: 'u1', timestamp: new Date().toISOString() },
-      { site: 'siteA', type: 'open', user_id: 'u1', timestamp: new Date().toISOString() },
-      { site: 'siteB', type: 'sent', user_id: 'u2', timestamp: new Date().toISOString() }
-    ];
+  {
+    site: 'siteA',
+    type: 'sent',
+    user_id: 'u1',
+    email: 'user1@example.com',
+    timestamp: new Date().toISOString(),
+    metadata: { campaign: 'camp123' }
+  },
+  {
+    site: 'siteA',
+    type: 'open',
+    user_id: 'u1',
+    email: 'user1@example.com',
+    timestamp: new Date().toISOString(),
+    metadata: { ip: '127.0.0.1' }
+  }
+];
+
     const values = [];
     const params = [];
     let idx = 1;
