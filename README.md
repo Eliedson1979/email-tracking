@@ -88,19 +88,41 @@ x-api-key: devkey123
 
 ```sh
 {
-  "events": [
-    { "site": "siteA", "type": "sent", "user_id": "u100" },
-    { "site": "siteA", "type": "open", "user_id": "u100" },
-    { "site": "siteB", "type": "click", "user_id": "u200" }
-  ]
+"events": [
+{
+"id": "evt_001",
+"type": "sent",
+"email": "user@example.com",
+"site": "site-a.com",
+"timestamp": "2024-01-20T10:30:00Z",
+"metadata": {
+"campaign_id": "camp_123",
+"subject": "Welcome Email"
+}
+},
+{
+"id": "evt_002",
+"type": "open",
+"email": "user@example.com",
+"site": "site-a.com",
+"timestamp": "2024-01-20T10:35:00Z",
+"metadata": {
+"ip": "192.168.1.1",
+"user_agent": "Mozilla/5.0..."
+}
+}
+]
 }
 ```
 
 ```sh
 Resposta esperada:
 
-{ "inserted": 3 }
-
+{
+"processed": 2,
+"duplicates": 0,
+"errors": []
+}
 ```
 
 b) GET /api/stats/daily
@@ -119,10 +141,19 @@ x-api-key: devkey123
 Resposta exemplo:
 
 {
-  "2025-08-29": {
-    "siteA": { "sent": 1, "open": 1 },
-    "siteB": { "click": 1 }
-  }
+	"2025-08-29": {
+		"siteA": {
+			"sent": 1,
+			"open": 1
+		}
+	},
+
+	"2024-01-20": {
+		"site-a.com": {
+			"sent": 1,
+			"open": 2
+		}
+	}
 }
 ```
 
