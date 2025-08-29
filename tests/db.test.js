@@ -20,6 +20,7 @@ describe("lib/db", () => {
   it("cria uma instância de Pool com DATABASE_URL do .env", () => {
     expect(Pool).toHaveBeenCalledWith({
       connectionString: process.env.DATABASE_URL,
+      ssl: false,
     });
   });
 
