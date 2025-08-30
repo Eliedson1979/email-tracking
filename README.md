@@ -21,6 +21,7 @@ Sistema de envio e rastreamento de e-mails de alto volume com microserviço em *
 ## ⚙️ Requisitos
 
 - Node.js >= 18
+- Next.js
 - Docker & Docker Compose
 - Postman ou Insomnia para testes
 
